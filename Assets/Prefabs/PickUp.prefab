@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7886259386600868754}
   - component: {fileID: 1868282501834562066}
   - component: {fileID: -1615074820295373659}
+  - component: {fileID: -744278762180156609}
+  - component: {fileID: 1715963678613702389}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: PickUp
@@ -153,3 +155,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-744278762180156609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551310160679009350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5842b4fa0dc877d4da46f675e0def832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayPickupSound
+  pickUpSound: {fileID: 8300000, guid: eab69f2933fdca846985ec3d392d62f5, type: 3}
+--- !u!114 &1715963678613702389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551310160679009350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db4ee3d0aba80d4f82d0b3f89bbd4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePickupPlayer

@@ -86,6 +86,13 @@ public class PlayerController : MonoBehaviour
         {
             count = count + 1;
 
+            // Call function on PlayerSounds.cs script attached to this Player gameObject [before SetActive(false)]
+            //gameObject.GetComponent<PlayerSounds>().PlaySoundFromPlayerControllerScript();
+
+            // Can also instantiate an empty game object at the location of collision with an AudioSource and have that play (doesn't rely on this gameObject's AudioSource)
+            //  * this approach allows for the sound to be spatialized in 3D without artifacts or re-triggering
+            other.gameObject.GetComponent<InstantiatePickupPlayer>().PlayClipAtPointNoDoppler(gameObject.GetComponent<PlayerSounds>().pickUpSound, transform.position);
+
             // Deactivate the collided object (making it disappear).
             other.gameObject.SetActive(false);
 
