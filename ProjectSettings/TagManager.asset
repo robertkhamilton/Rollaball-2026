@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - Enemy
+  - SnapshotTrigger
   layers:
   - Default
   - TransparentFX
