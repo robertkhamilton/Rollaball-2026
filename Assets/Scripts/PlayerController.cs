@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     // Speed at which the player moves.
     public float speed = 0;
 
+    // Jump parameters
+    public float jumpForce = 0.5f; // Adjust jump strength in the Unity Inspector
+    private bool isGrounded = true;
+
     // UI text component to display count of "PickUp" objects collected.
     public TextMeshProUGUI countText;
 
@@ -50,6 +54,20 @@ public class PlayerController : MonoBehaviour
 
         // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed);
+    }
+
+    public void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGrounded = false; 
+    }
+
+    public void OnJump(InputValue value)
+    {
+        if (value.isPressed && isGrounded)
+        {
+            Jump();
+        }
     }
 
     void OnMove(InputValue movementValue)
@@ -110,6 +128,12 @@ public class PlayerController : MonoBehaviour
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        }
+
+        // Reset jump capacity upon landing on the floor tagged "Ground"
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
         }
     }
 }
