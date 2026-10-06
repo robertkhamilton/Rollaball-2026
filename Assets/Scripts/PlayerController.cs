@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
 
     // Jump parameters
-    public float jumpForce = 0.5f; // Adjust jump strength in the Unity Inspector
+    public float jumpForce = 5f; // Adjust jump strength in the Unity Inspector
     private bool isGrounded = true;
 
     // UI text component to display count of "PickUp" objects collected.
